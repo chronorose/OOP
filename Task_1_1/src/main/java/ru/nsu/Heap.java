@@ -2,6 +2,9 @@ package ru.nsu;
 
 import java.util.Objects;
 
+/**
+ * {@link Heap} class for max-heap
+ */
 public class Heap {
     int[] array;
 

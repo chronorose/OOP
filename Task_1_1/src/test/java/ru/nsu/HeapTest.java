@@ -13,7 +13,9 @@ class HeapTest {
     }
 
     private boolean testIfMaxHeap(int[] heap, int i) {
-        if (i > heap.length) return true;
+        if (i > heap.length) {
+            return true;
+        }
         int left = 2 * i + 1;
         int right = 2 * i + 2;
         if (left < heap.length && heap[left] > heap[i]) {
