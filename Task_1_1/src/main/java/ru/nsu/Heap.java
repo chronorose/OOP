@@ -1,5 +1,7 @@
 package ru.nsu;
 
+import java.util.Objects;
+
 public class Heap {
     int[] array;
 
@@ -9,11 +11,7 @@ public class Heap {
      * @param array Array to be heapified and used within {@link Heap} class;
      */
     Heap(int[] array) {
-        if (array == null) {
-            this.array = new int[]{};
-        } else {
-            this.array = array;
-        }
+        this.array = Objects.requireNonNullElseGet(array, () -> new int[]{});
         heapify();
     }
 
@@ -27,19 +25,19 @@ public class Heap {
     public void siftDown(int start, int limit) {
         int left = 2 * start + 1;
         int right = 2 * start + 2;
-        int new_i = start;
+        int toSwap = start;
 
-        if (left < limit && this.array[left] > this.array[new_i]) {
-            new_i = left;
+        if (left < limit && this.array[left] > this.array[toSwap]) {
+            toSwap = left;
         }
 
-        if (right < limit && this.array[right] > this.array[new_i]) {
-            new_i = right;
+        if (right < limit && this.array[right] > this.array[toSwap]) {
+            toSwap = right;
         }
 
-        if (new_i != start) {
-            Util.swap(this.array, start, new_i);
-            siftDown(new_i, limit);
+        if (toSwap != start) {
+            Util.swap(this.array, start, toSwap);
+            siftDown(toSwap, limit);
         }
     }
 

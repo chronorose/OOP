@@ -24,8 +24,4 @@ class HeapTest {
         }
         return testIfMaxHeap(heap, left) && testIfMaxHeap(heap, right);
     }
-
-    @Test
-    void testSiftDown() {
-    }
 }

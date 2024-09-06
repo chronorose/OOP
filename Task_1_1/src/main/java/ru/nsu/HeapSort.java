@@ -7,7 +7,9 @@ class HeapSort {
      * @param array Array to be sorted.
      */
     public static void heapsort(int[] array) {
-        if (array == null) return;
+        if (array == null) {
+            return;
+        }
         Heap heap = new Heap(array);
         for (int i = heap.array.length - 1; i > 0; i--) {
             Util.swap(heap.array, 0, i);
