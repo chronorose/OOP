@@ -17,7 +17,7 @@ public class Heap {
 
     /**
      * Sifts down element of {@link Heap} from {@code start} index to its correct position,
-     * up to the {@limit} index. 
+     * up to the {@code limit} index. 
      * @param start index from which to start sifting down.
      * @param limit index on which to forcefully end sifting down.
     */
