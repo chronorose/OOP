@@ -2,6 +2,8 @@ package ru.nsu;
 
 public class Util {
     /**
+     * Static method which swaps two elements in int array at indices {@code i} {@code j}.
+     *
      * @param array Array in which swaps will be procured
      * @param i     first one to be swapped
      * @param j     second one to be swapped

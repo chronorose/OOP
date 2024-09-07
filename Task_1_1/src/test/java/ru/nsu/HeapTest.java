@@ -2,17 +2,26 @@ package ru.nsu;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class HeapTest {
     @Test
     void testHeapify() {
         int[] arr = new int[]{4, 7, 8, 10, 3, 7, 10};
-        Heap heap = new Heap(arr);
+        Heap.heapify(arr);
         assertTrue(testIfMaxHeap(arr, 0));
     }
 
+    @Test
+    void testHeapifyNull() {
+        int[] arr = null;
+        Heap.heapify(arr);
+        assertFalse(testIfMaxHeap(arr, 0));
+    }
+
     private boolean testIfMaxHeap(int[] heap, int i) {
+        if (heap == null) return false; // not sure what's the right thing to return :D
         if (i > heap.length) {
             return true;
         }

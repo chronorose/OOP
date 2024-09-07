@@ -10,11 +10,10 @@ class HeapSort {
         if (array == null) {
             return;
         }
-        Heap heap = new Heap(array);
-        for (int i = heap.array.length - 1; i > 0; i--) {
-            Util.swap(heap.array, 0, i);
-            heap.siftDown(0, i);
+        Heap.heapify(array);
+        for (int i = array.length - 1; i > 0; i--) {
+            Util.swap(array, 0, i);
+            Heap.siftDown(array, 0, i);
         }
-        heap.array = null;
     }
 }
