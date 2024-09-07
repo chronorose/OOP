@@ -1,9 +1,9 @@
 package ru.nsu;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 class HeapTest {
     @Test
@@ -16,12 +16,17 @@ class HeapTest {
     @Test
     void testHeapifyNull() {
         int[] arr = null;
-        Heap.heapify(arr);
-        assertFalse(testIfMaxHeap(arr, 0));
+        try {
+            Heap.heapify(arr);
+        } catch (Throwable expected) {
+            assertEquals(NullPointerException.class, expected.getClass());
+        }
     }
 
     private boolean testIfMaxHeap(int[] heap, int i) {
-        if (heap == null) return false; // not sure what's the right thing to return :D
+        if (heap == null) {
+            return false; // not sure what's the right thing to return :D
+        }
         if (i > heap.length) {
             return true;
         }

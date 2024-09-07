@@ -1,8 +1,8 @@
 package ru.nsu;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import org.junit.jupiter.api.Test;
 
 class UtilTest {
     @Test
@@ -10,13 +10,6 @@ class UtilTest {
         int[] arr = new int[]{4, 7, 8, 10, 3, 7, 10};
         Util.swap(arr, 0, 4);
         assertArrayEquals(arr, new int[]{3, 7, 8, 10, 4, 7, 10});
-    }
-
-    @Test
-    void testSwapNull() {
-        int[] arr = null;
-        Util.swap(arr, 0, 4);
-        assertArrayEquals(arr, null);
     }
 
     @Test

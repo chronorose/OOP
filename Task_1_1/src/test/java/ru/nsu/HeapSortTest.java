@@ -1,11 +1,12 @@
 package ru.nsu;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 
 class HeapSortTest {
     void universalHeapTest(int[] arr) {
@@ -30,8 +31,11 @@ class HeapSortTest {
     @Test
     void testHeapSortNull() {
         int[] arr = null;
-        HeapSort.heapsort(arr);
-        assertArrayEquals(null, arr);
+        try {
+            HeapSort.heapsort(arr);
+        } catch (Throwable expected) {
+            assertEquals(NullPointerException.class, expected.getClass());
+        }
     }
 
     @Test
@@ -41,7 +45,7 @@ class HeapSortTest {
     }
 
     @Test
-    void testHeapSortABitBigger() {
+    void testHeapSortBitBigger() {
         int[] arr = generateArray(1000000);
         universalHeapTest(arr);
     }

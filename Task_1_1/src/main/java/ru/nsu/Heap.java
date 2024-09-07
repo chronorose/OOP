@@ -10,11 +10,9 @@ public class Heap {
      *
      * @param start index from which to start sifting down.
      * @param limit index on which to forcefully end sifting down.
+     * @throws NullPointerException
      */
     public static void siftDown(int[] array, int start, int limit) {
-        if (array == null) {
-            return;
-        }
         int left = 2 * start + 1;
         int right = 2 * start + 2;
         int toSwap = start;
@@ -35,11 +33,10 @@ public class Heap {
 
     /**
      * Static method, which turns regular array into correct max-heap.
+     *
+     * @throws NullPointerException
      */
     public static void heapify(int[] array) {
-        if (array == null) {
-            return;
-        }
         int middle = (array.length / 2) - 1;
         for (int i = middle; i >= 0; i--) {
             siftDown(array, i, array.length);
