@@ -5,7 +5,7 @@ class HeapSort {
      * Implementation of heapsort algorithm. Runs in O(n * log(n)).
      *
      * @param array Array to be sorted.
-     * @throws NullPointerException
+     * @throws NullPointerException when passed null into {@code array}
      */
     public static void heapsort(int[] array) {
         Heap.heapify(array);
