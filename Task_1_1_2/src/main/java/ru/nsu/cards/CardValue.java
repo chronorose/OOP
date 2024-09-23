@@ -1,5 +1,8 @@
 package ru.nsu.cards;
 
+/**
+ * Enum for storing all possible card values.
+ */
 public enum CardValue {
     Ace(11, "Туз"),
     King(10, "Король"),

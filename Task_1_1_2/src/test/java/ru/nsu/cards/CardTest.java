@@ -23,38 +23,38 @@ class CardTest {
     @Test
     void testCv1() {
         Card card = new Card(Kind.Clubs, CardValue.Ace);
-        assertEquals(card.getCV(), CardValue.Ace);
+        assertEquals(card.getCardV(), CardValue.Ace);
     }
 
     @Test
     void testCv2() {
         Card card = new Card(Kind.Clubs, CardValue.Six);
-        assertEquals(card.getCV(), CardValue.Six);
+        assertEquals(card.getCardV(), CardValue.Six);
     }
 
     @Test
     void testCv3() {
         Card card = new Card(Kind.Clubs, CardValue.Seven);
-        assertEquals(card.getCV(), CardValue.Seven);
+        assertEquals(card.getCardV(), CardValue.Seven);
     }
 
     @Test
     void testCv4() {
         Card card = new Card(Kind.Clubs, CardValue.Eight);
-        assertEquals(card.getCV(), CardValue.Eight);
+        assertEquals(card.getCardV(), CardValue.Eight);
     }
 
     @Test
     void testCv5() {
         Card card = new Card(Kind.Clubs, CardValue.Nine);
-        assertEquals(card.getCV(), CardValue.Nine);
+        assertEquals(card.getCardV(), CardValue.Nine);
     }
 
     @Test
     void testTs1() {
         Card card = new Card(Kind.Clubs, CardValue.Nine);
-        assertEquals(CardValue.Nine.name + " " + Kind.Clubs.name +
-                " (" + CardValue.Nine.value + ")", card.toString());
+        assertEquals(CardValue.Nine.name + " " + Kind.Clubs.name
+                + " (" + CardValue.Nine.value + ")", card.toString());
     }
 
     @Test

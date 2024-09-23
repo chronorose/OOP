@@ -1,8 +1,12 @@
 package ru.nsu.game;
 
-import ru.nsu.cards.*;
-import ru.nsu.players.*;
+import ru.nsu.cards.Card;
+import ru.nsu.players.Dealer;
+import ru.nsu.players.Player;
 
+/**
+ * Class that consists of main game loop and a bunch of helper methods.
+ */
 public class Game {
     GameState state;
     GameIO io;
@@ -75,8 +79,8 @@ public class Game {
         io.openCard(card);
         state.dealer.openCard();
         io.handsPrinter();
-        while (checkCondition(state.dealer) == HandState.NotEnough &&
-                state.dealer.sum < Dealer.DEALER_MAX) {
+        while (checkCondition(state.dealer) == HandState.NotEnough 
+                && state.dealer.sum < Dealer.DEALER_MAX) {
             card = state.deck.getCard();
             state.dealer.addCard(card);
             io.openCard(card);

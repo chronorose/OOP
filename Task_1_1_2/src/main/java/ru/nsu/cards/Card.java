@@ -1,5 +1,8 @@
 package ru.nsu.cards;
 
+/**
+ * {@link Card} class for storing info about card.
+ */
 public class Card {
     private final Kind kind;
     private final CardValue value;
@@ -11,12 +14,11 @@ public class Card {
         this.value = cv;
         this.normalized = false;
     }
-
     public void setNormalized() {
         normalized = true;
     }
 
-    public CardValue getCV() {
+    public CardValue getCardV() {
         return this.value;
     }
 

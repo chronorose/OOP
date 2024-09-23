@@ -1,6 +1,6 @@
 package ru.nsu;
 
-import ru.nsu.game.*;
+import ru.nsu.game.Game;
 
 /**
  * class for practice to launch java :D.

@@ -1,5 +1,8 @@
 package ru.nsu.game;
 
+/**
+ * Class that stores scores of players.
+ */
 class GameScore {
     private int dealerWon;
     private int playerWon;

@@ -1,11 +1,13 @@
 package ru.nsu.cards;
 
-import java.util.Random;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.NoSuchElementException;
+import java.util.Random;
 
+/**
+ * Class needed to store cards and get cards out of it.
+ */
 public class Deck {
     ArrayList<Card> cards;
     int leftCards;

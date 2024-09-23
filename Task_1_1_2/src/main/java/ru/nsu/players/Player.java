@@ -1,11 +1,13 @@
 package ru.nsu.players;
 
 import java.util.ArrayList;
-
-import ru.nsu.cards.CardValue;
 import ru.nsu.cards.Card;
+import ru.nsu.cards.CardValue;
 import ru.nsu.cards.Deck;
 
+/**
+ * Class that represents player.
+ */
 public class Player {
     public int sum = 0;
     protected ArrayList<Card> hand;
@@ -19,15 +21,15 @@ public class Player {
 
     private void normalize() {
         for (Card card : hand) {
-            if (card.getCV() == CardValue.Ace) {
+            if (card.getCardV() == CardValue.Ace) {
                 card.setNormalized();
             }
         }
     }
 
     private int setSum(Card card) {
-        sum += card.getCV().value;
-        if (card.getCV() == CardValue.Ace) {
+        sum += card.getCardV().value;
+        if (card.getCardV() == CardValue.Ace) {
             aces++;
         }
         if (sum > 21) {

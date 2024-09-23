@@ -4,6 +4,9 @@ import ru.nsu.cards.Deck;
 import ru.nsu.players.Dealer;
 import ru.nsu.players.Player;
 
+/**
+ * Class that stores state of the game.
+ */
 class GameState {
     Deck deck;
     Player player;

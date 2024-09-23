@@ -4,15 +4,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
-import ru.nsu.cards.*;
 import org.junit.jupiter.api.Test;
+import ru.nsu.cards.Card;
+import ru.nsu.cards.CardValue;
+import ru.nsu.cards.Kind;
 
-class GameIOTest {
+class GameIoTest {
     @Test
-    void testGIOTurn1() {
+    void testGiOturn1() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        PrintStream orOut = System.out;
+        final PrintStream orOut = System.out;
         GameScore score = new GameScore();
         GameIO io = new GameIO(score);
         System.setOut(new PrintStream(out));
@@ -25,40 +26,42 @@ class GameIOTest {
     }
 
     @Test
-    void testGIOTurn2() {
+    void testGiOturn2() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        PrintStream orOut = System.out;
         GameScore score = new GameScore();
         GameIO io = new GameIO(score);
-        System.setOut(new PrintStream(out));
         GameState gs = new GameState();
         io.setState(gs);
         gs.turn = Turn.DealerTurn;
+        final PrintStream orOut = System.out;
+        System.setOut(new PrintStream(out));
         io.turnName();
         assertEquals("Ход дилера\n------\n", out.toString());
         System.setOut(orOut);
     }
 
     @Test
-    void testGIOHands() {
+    void testGiOhands() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        PrintStream orOut = System.out;
+        final PrintStream orOut = System.out;
         GameScore score = new GameScore();
         GameIO io = new GameIO(score);
         System.setOut(new PrintStream(out));
         GameState gs = new GameState();
         io.setState(gs);
         gs.turn = Turn.PlayerTurn;
-        String str = "  Ваши карты: " + gs.player.toString() + " => " + gs.player.sum + "\n" + "  Карты дилера: " + gs.dealer.toString() + "\n\n";
+        String str = "  Ваши карты: " + gs.player.toString() 
+            + " => " + gs.player.sum + "\n" 
+            + "  Карты дилера: " + gs.dealer.toString() + "\n\n";
         io.handsPrinter();
         assertEquals(str, out.toString());
         System.setOut(orOut);
     }
 
     @Test
-    void testGIOOpenCard() {
+    void testGiOopenCard() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        PrintStream orOut = System.out;
+        final PrintStream orOut = System.out;
         GameScore score = new GameScore();
         GameIO io = new GameIO(score);
         System.setOut(new PrintStream(out));
@@ -73,16 +76,18 @@ class GameIOTest {
     }
 
     @Test
-    void testGIORPrinter() {
+    void testGiOrPrinter() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        PrintStream orOut = System.out;
+        final PrintStream orOut = System.out;
         GameScore score = new GameScore();
         GameIO io = new GameIO(score);
         System.setOut(new PrintStream(out));
         GameState gs = new GameState();
         io.setState(gs);
         gs.result = Result.DealerWon;
-        String str = "Дилер выйграл раунд! " + " Счёт " + score.getPlayerScore() + ":" + score.getDealerScore() + " \n";
+        String str = "Дилер выйграл раунд! " 
+            + " Счёт " + score.getPlayerScore() 
+            + ":" + score.getDealerScore() + " \n";
         io.resultPrinter();
         assertEquals(str, out.toString());
         System.setOut(orOut);

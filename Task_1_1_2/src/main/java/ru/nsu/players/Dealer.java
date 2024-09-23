@@ -1,10 +1,13 @@
 package ru.nsu.players;
 
-import ru.nsu.cards.Deck;
 import ru.nsu.cards.Card;
+import ru.nsu.cards.Deck;
 
+/**
+ * Class that represents dealer of blackjack, extendes {@link Player}
+ */
 public class Dealer extends Player {
-    public final static int DEALER_MAX = 17;
+    public static final int DEALER_MAX = 17;
 
     public Dealer(Deck deck) {
         super(deck);

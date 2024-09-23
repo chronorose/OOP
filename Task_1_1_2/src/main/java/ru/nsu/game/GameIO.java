@@ -1,15 +1,17 @@
 package ru.nsu.game;
 
-import ru.nsu.cards.*;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import ru.nsu.cards.Card;
 
+/**
+ * Class that prints everything.
+ */
 class GameIO {
     private static final String askForInput =
-            "Введите \"" + PlayerInput.Continue.val +
-                    "\", чтобы взять карту, и \"" + PlayerInput.Stop.val +
-                    "\", чтобы остановиться...\n";
+            "Введите \"" + PlayerInput.Continue.val 
+            + "\", чтобы взять карту, и \"" + PlayerInput.Stop.val 
+            + "\", чтобы остановиться...\n";
     GameState state;
     GameScore score;
     BufferedReader reader;
@@ -32,6 +34,7 @@ class GameIO {
                 return false;
             }
         } catch (Throwable exception) {
+            System.out.println("Неправильный ввод, повторите ещё раз: ");
         }
         System.out.println("Неправильный ввод, повторите ещё раз: ");
         return getInput();
@@ -64,8 +67,8 @@ class GameIO {
     }
 
     void handsPrinter() {
-        String toPrint = "  Ваши карты: " + state.player.toString() +
-                " => " + state.player.sum + "\n";
+        String toPrint = "  Ваши карты: " + state.player.toString() 
+            + " => " + state.player.sum + "\n";
         toPrint += "  Карты дилера: " + state.dealer.toString();
         if (state.turn == Turn.DealerTurn) {
             toPrint += " => " + state.dealer.sum;
