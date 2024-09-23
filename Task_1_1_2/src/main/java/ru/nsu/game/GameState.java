@@ -1,19 +1,8 @@
 package ru.nsu.game;
 
-import ru.nsu.cards.*;
-import ru.nsu.players.*;
-
-enum Turn {
-    DealerTurn,
-    PlayerTurn,
-}
-
-enum Result {
-    NotDecided,
-    PlayerWon,
-    DealerWon,
-    Draw,
-}
+import ru.nsu.cards.Deck;
+import ru.nsu.players.Dealer;
+import ru.nsu.players.Player;
 
 class GameState {
     Deck deck;

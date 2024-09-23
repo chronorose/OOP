@@ -1,8 +1,10 @@
 package ru.nsu.cards;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class CardTest {
     @Test
@@ -19,56 +21,57 @@ class CardTest {
     }
 
     @Test
-    void testCV1() {
+    void testCv1() {
         Card card = new Card(Kind.Clubs, CardValue.Ace);
         assertEquals(card.getCV(), CardValue.Ace);
     }
 
     @Test
-    void testCV2() {
+    void testCv2() {
         Card card = new Card(Kind.Clubs, CardValue.Six);
         assertEquals(card.getCV(), CardValue.Six);
     }
 
     @Test
-    void testCV3() {
+    void testCv3() {
         Card card = new Card(Kind.Clubs, CardValue.Seven);
         assertEquals(card.getCV(), CardValue.Seven);
     }
 
     @Test
-    void testCV4() {
+    void testCv4() {
         Card card = new Card(Kind.Clubs, CardValue.Eight);
         assertEquals(card.getCV(), CardValue.Eight);
     }
 
     @Test
-    void testCV5() {
+    void testCv5() {
         Card card = new Card(Kind.Clubs, CardValue.Nine);
         assertEquals(card.getCV(), CardValue.Nine);
     }
 
     @Test
-    void testTS1() {
+    void testTs1() {
         Card card = new Card(Kind.Clubs, CardValue.Nine);
-        assertEquals(CardValue.Nine.name + " " + Kind.Clubs.name + " (" + CardValue.Nine.value + ")", card.toString());
+        assertEquals(CardValue.Nine.name + " " + Kind.Clubs.name +
+                " (" + CardValue.Nine.value + ")", card.toString());
     }
 
     @Test
-    void testTS2() {
+    void testTs2() {
         Card card = new Card(Kind.Clubs, CardValue.Ace);
         card.setNormalized();
         assertEquals(CardValue.Ace.name + " " + Kind.Clubs.name + " (1)", card.toString());
     }
 
     @Test
-    void testGKind1() {
+    void testGkind1() {
         Card card = new Card(Kind.Clubs, CardValue.Ace);
         assertEquals(Kind.Clubs, card.getKind());
     }
 
     @Test
-    void testGKind2() {
+    void testGkind2() {
         Card card = new Card(Kind.Diamonds, CardValue.Ace);
         assertEquals(Kind.Diamonds, card.getKind());
     }

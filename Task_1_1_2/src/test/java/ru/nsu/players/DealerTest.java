@@ -1,9 +1,12 @@
 package ru.nsu.players;
 
-import ru.nsu.cards.*;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import ru.nsu.cards.Card;
+import ru.nsu.cards.Deck;
 
 class DealerTest {
     @Test

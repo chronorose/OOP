@@ -27,6 +27,6 @@ public class Deck {
         if (leftCards <= 0) {
             throw new NoSuchElementException();
         }
-        return cards.removeLast();
+        return cards.remove(cards.size() - 1);
     }
 }

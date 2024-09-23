@@ -2,8 +2,11 @@ package ru.nsu.players;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import ru.nsu.cards.*;
 import org.junit.jupiter.api.Test;
+import ru.nsu.cards.Card;
+import ru.nsu.cards.CardValue;
+import ru.nsu.cards.Deck;
+import ru.nsu.cards.Kind;
 
 class PlayerTest {
     @Test

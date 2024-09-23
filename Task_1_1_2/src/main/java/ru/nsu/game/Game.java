@@ -3,12 +3,6 @@ package ru.nsu.game;
 import ru.nsu.cards.*;
 import ru.nsu.players.*;
 
-enum HandState {
-    BlackJack,
-    OverHead,
-    NotEnough,
-}
-
 public class Game {
     GameState state;
     GameIO io;

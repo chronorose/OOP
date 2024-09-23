@@ -5,20 +5,6 @@ import ru.nsu.cards.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-enum PlayerInput {
-    Continue(1),
-    Stop(0);
-    final int val;
-
-    PlayerInput(int val) {
-        this.val = val;
-    }
-
-    int toInt() {
-        return val;
-    }
-}
-
 class GameIO {
     private static final String askForInput =
             "Введите \"" + PlayerInput.Continue.val +
