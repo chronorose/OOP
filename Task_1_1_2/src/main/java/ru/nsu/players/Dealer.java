@@ -4,7 +4,7 @@ import ru.nsu.cards.Card;
 import ru.nsu.cards.Deck;
 
 /**
- * Class that represents dealer of blackjack, extendes {@link Player}
+ * Class that represents dealer of blackjack, extendes {@link Player}.
  */
 public class Dealer extends Player {
     public static final int DEALER_MAX = 17;

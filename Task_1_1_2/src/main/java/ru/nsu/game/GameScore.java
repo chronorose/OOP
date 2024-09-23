@@ -26,11 +26,11 @@ class GameScore {
         return round;
     }
 
-    void incrementPScore() {
+    void incrementPlayerScore() {
         playerWon++;
     }
 
-    void incrementDScore() {
+    void incrementDealerScore() {
         dealerWon++;
     }
 

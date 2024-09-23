@@ -15,6 +15,7 @@ class GameIO {
     GameState state;
     GameScore score;
     BufferedReader reader;
+
     GameIO(GameScore score) {
         reader = new BufferedReader(new InputStreamReader(System.in));
         this.score = score;
@@ -90,8 +91,8 @@ class GameIO {
         } else {
             toPrint += "Ничья! ";
         }
-        toPrint += " Счёт " + score.getPlayerScore() + ":" +
-                score.getDealerScore() + " ";
+        toPrint += " Счёт " + score.getPlayerScore() + ":" 
+            + score.getDealerScore() + " ";
         if (score.getPlayerScore() > score.getDealerScore()) {
             toPrint += "в вашу пользу";
         } else if (score.getDealerScore() > score.getPlayerScore()) {

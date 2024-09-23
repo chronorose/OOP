@@ -26,7 +26,7 @@ class GameScoreTest {
     void testPlayerScore1() {
         GameScore score = new GameScore();
         int prevScore = score.getPlayerScore();
-        score.incrementPScore();
+        score.incrementPlayerScore();
         assertEquals(prevScore + 1, score.getPlayerScore());
 
     }
@@ -35,8 +35,8 @@ class GameScoreTest {
     void testPlayerScore2() {
         GameScore score = new GameScore();
         int prevScore = score.getPlayerScore();
-        score.incrementPScore();
-        score.incrementPScore();
+        score.incrementPlayerScore();
+        score.incrementPlayerScore();
         assertEquals(prevScore + 2, score.getPlayerScore());
 
     }
@@ -45,7 +45,7 @@ class GameScoreTest {
     void testDealerScore1() {
         GameScore score = new GameScore();
         int prevScore = score.getDealerScore();
-        score.incrementDScore();
+        score.incrementDealerScore();
         assertEquals(prevScore + 1, score.getDealerScore());
 
     }
@@ -54,8 +54,8 @@ class GameScoreTest {
     void testDealerScore2() {
         GameScore score = new GameScore();
         int prevScore = score.getDealerScore();
-        score.incrementDScore();
-        score.incrementDScore();
+        score.incrementDealerScore();
+        score.incrementDealerScore();
         assertEquals(prevScore + 2, score.getDealerScore());
 
     }

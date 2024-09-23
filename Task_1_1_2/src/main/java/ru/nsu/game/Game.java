@@ -63,10 +63,10 @@ public class Game {
         Result result = checkState();
         switch (result) {
             case DealerWon:
-                score.incrementDScore();
+                score.incrementDealerScore();
                 break;
             case PlayerWon:
-                score.incrementPScore();
+                score.incrementPlayerScore();
                 break;
             default:
                 break;
