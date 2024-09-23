@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.cards","l":"Card"},{"p":"ru.nsu.cards","l":"CardValue"},{"p":"ru.nsu.players","l":"Dealer"},{"p":"ru.nsu.cards","l":"Deck"},{"p":"ru.nsu.game","l":"Game"},{"p":"ru.nsu.cards","l":"Kind"},{"p":"ru.nsu.players","l":"Player"}]
