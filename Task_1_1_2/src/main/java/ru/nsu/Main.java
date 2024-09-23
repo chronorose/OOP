@@ -1,5 +1,7 @@
 package ru.nsu;
 
+import ru.nsu.game.*;
+
 /**
  * class for practice to launch java :D.
  */
@@ -17,5 +19,6 @@ class Main {
         //    System.out.println(deck.cards[i].toString());
         //}
         Game game = new Game();
+        game.run();
     }
 }

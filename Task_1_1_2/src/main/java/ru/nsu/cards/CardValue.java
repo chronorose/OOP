@@ -1,4 +1,4 @@
-package ru.nsu;
+package ru.nsu.cards;
 
 public enum CardValue {
     Ace(11, "Туз"),
@@ -14,10 +14,11 @@ public enum CardValue {
     Four(4, "Четвёрка"),
     Three(3, "Тройка"),
     Two(2, "Двойка");
-    final int value;
+    public final int value;
     final String name;
+
     CardValue(int value, String name) {
         this.value = value;
         this.name = name;
     }
-};
+}

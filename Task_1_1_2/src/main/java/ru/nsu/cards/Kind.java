@@ -1,4 +1,4 @@
-package ru.nsu;
+package ru.nsu.cards;
 
 public enum Kind {
     Diamonds("Буби"),
@@ -6,6 +6,7 @@ public enum Kind {
     Clubs("Треф"),
     Spades("Пик");
     final String name;
+
     Kind(String name) {
         this.name = name;
     }

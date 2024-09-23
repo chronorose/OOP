@@ -24,6 +24,9 @@ test {
 
 task run(type: Exec) {
     dependsOn build
+    //main = 'ru.nsu.Main'
+    //classpath = sourceSets.main.runtimeClasspath.getAsPath()
+    standardInput = System.in
     commandLine "java", "-classpath", sourceSets.main.runtimeClasspath.getAsPath(), javaMainClass
 }
 
