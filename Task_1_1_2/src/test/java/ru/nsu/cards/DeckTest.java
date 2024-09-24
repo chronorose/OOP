@@ -11,4 +11,11 @@ class DeckTest {
         Card lastCard = deck.cards.get(deck.cards.size() - 1);
         assertEquals(lastCard, deck.getCard());
     }
+
+    @Test
+    void viewCardTest() {
+        Deck deck = new Deck();
+        Card lcard = deck.viewCard(deck.getSize() - 1);
+        assertEquals(lcard, deck.cards.get(deck.cards.size() - 1));
+    }
 }

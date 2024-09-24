@@ -27,18 +27,18 @@ class GameIO {
 
     boolean getInput() {
         System.out.println(askForInput);
-        try {
-            int input = Integer.parseInt(reader.readLine());
-            if (input == PlayerInput.Continue.val) {
-                return true;
-            } else if (input == PlayerInput.Stop.val) {
-                return false;
+        int input = PlayerInput.Continue.val;
+        while (input != PlayerInput.Stop.val) {
+            try {
+                input = Integer.parseInt(reader.readLine());
+                if (input == PlayerInput.Continue.val) {
+                    return true;
+                }
+            } catch (Throwable exception) {
+                System.out.println("Неправильный ввод, повторите ещё раз: ");
             }
-        } catch (Throwable exception) {
-            System.out.println("Неправильный ввод, повторите ещё раз: ");
         }
-        System.out.println("Неправильный ввод, повторите ещё раз: ");
-        return getInput();
+        return false;
     }
 
     void turnName() {

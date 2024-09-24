@@ -43,20 +43,15 @@ public class Game {
         }
         io.turnName();
         state.result = handleDealer();
-        if (state.result != Result.NotDecided) {
-            addCounts();
-            io.resultPrinter();
-        }
+        state.result = checkEndgame();
+
+        addCounts();
+        io.resultPrinter();
     }
 
-    Result handleStart() {
+    private Result handleStart() {
         io.startTurn();
-        Result result = checkState();
-        if (result == Result.DealerWon) {
-            state.turn = Turn.DealerTurn;
-            handleDealer();
-        }
-        return result;
+        return checkState();
     }
 
     private void addCounts() {
@@ -73,7 +68,7 @@ public class Game {
         }
     }
 
-    private Result handleDealer() {
+    protected Result handleDealer() {
         state.turn = Turn.DealerTurn;
         Card card = state.dealer.getLast();
         io.openCard(card);
@@ -90,7 +85,7 @@ public class Game {
         return checkState();
     }
 
-    private Result handlePlayer() {
+    protected Result handlePlayer() {
         state.turn = Turn.PlayerTurn;
         while (checkCondition(state.player) == HandState.NotEnough && io.getInput()) {
             Card card = state.deck.getCard();
@@ -99,6 +94,20 @@ public class Game {
             io.handsPrinter();
         }
         return checkState();
+    }
+
+    protected Result checkEndgame() {
+        Result res = state.result;
+        if (res == Result.NotDecided) {
+            if (state.dealer.sum > state.player.sum) {
+                res = Result.DealerWon;
+            } else if (state.player.sum > state.dealer.sum) {
+                res = Result.PlayerWon;
+            } else {
+                res = Result.Draw;
+            }
+        }
+        return res;
     }
 
     private Result checkState() {

@@ -25,6 +25,14 @@ public class Deck {
         Collections.shuffle(cards);
     }
 
+    public Card viewCard(int i) {
+        return cards.get(i);
+    }
+
+    public int getSize() {
+        return cards.size();
+    }
+
     public Card getCard() {
         if (leftCards <= 0) {
             throw new NoSuchElementException();
