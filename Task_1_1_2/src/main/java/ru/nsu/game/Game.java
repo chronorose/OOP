@@ -54,7 +54,7 @@ public class Game {
         return checkState();
     }
 
-    private void addCounts() {
+    protected void addCounts() {
         Result result = checkState();
         switch (result) {
             case DealerWon:
@@ -110,7 +110,7 @@ public class Game {
         return res;
     }
 
-    private Result checkState() {
+    protected Result checkState() {
         HandState player = checkCondition(state.player);
         HandState dealer = checkCondition(state.dealer);
         if (player == HandState.BlackJack && dealer != HandState.BlackJack) {
