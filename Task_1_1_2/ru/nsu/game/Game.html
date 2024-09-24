@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -176,21 +176,31 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>protected ru.nsu.game.Result</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkEndgame()">checkEndgame</a></span>()</code></th>
+<td class="colFirst"><code>protected void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addCounts()">addCounts</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected ru.nsu.game.Result</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleDealer()">handleDealer</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkEndgame()">checkEndgame</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>protected ru.nsu.game.Result</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handlePlayer()">handlePlayer</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkState()">checkState</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected ru.nsu.game.Result</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleDealer()">handleDealer</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected ru.nsu.game.Result</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handlePlayer()">handlePlayer</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#run()">run</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
@@ -247,6 +257,15 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;run()</pre>
 </li>
 </ul>
+<a id="addCounts()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addCounts</h4>
+<pre class="methodSignature">protected&nbsp;void&nbsp;addCounts()</pre>
+</li>
+</ul>
 <a id="handleDealer()">
 <!--   -->
 </a>
@@ -268,10 +287,19 @@ extends java.lang.Object</pre>
 <a id="checkEndgame()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>checkEndgame</h4>
 <pre class="methodSignature">protected&nbsp;ru.nsu.game.Result&nbsp;checkEndgame()</pre>
+</li>
+</ul>
+<a id="checkState()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>checkState</h4>
+<pre class="methodSignature">protected&nbsp;ru.nsu.game.Result&nbsp;checkState()</pre>
 </li>
 </ul>
 </li>
