@@ -6,9 +6,11 @@ class Div extends Binary {
     Div(Expression left, Expression right) {
         super(left, right);
     }
+
     int eval(HashMap<String, Integer> vars) {
         return left.eval(vars) / right.eval(vars);
     }
+
     Expression derivative(String var) {
         Expression l = left.derivative(var);
         Expression r = right.derivative(var);
@@ -18,10 +20,12 @@ class Div extends Binary {
         Expression top = new Add(uv, vu); // u'v + uv'
         return new Div(top, vsq); // (u'v + uv') / v^2
     }
+
     @Override
     Expression copy() {
         return new Div(left.copy(), right.copy());
     }
+
     @Override
     public String toString() {
         return "(" + left.toString() + " / " + right.toString() + ")";
