@@ -116,7 +116,11 @@ class Parser {
                         if (i < string.length) {
                             i--;
                         }
-                        out.add(new ParserNumber(Integer.parseInt(number)));
+                        try {
+                            out.add(new ParserNumber(Integer.parseInt(number)));
+                        } catch (Exception ex) {
+                            throw new IncorrectInputException("Overflow in the number " + number, ex);
+                        }
                     } else if (Util.isLetter(string[i])) {
                         String var = String.valueOf(string[i]);
                         i++;

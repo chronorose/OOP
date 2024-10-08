@@ -14,7 +14,8 @@ class Variable extends Expression {
         if (number == null) {
             throw new WrongVariableException(
                     "You have tried to evaluate expr with incorrect arguments"
-                    + "(one of the variables was not initialized).");
+                    + "(one of the variables was not initialized)."
+                    + name);
         }
         return number;
     }
