@@ -12,7 +12,9 @@ class Variable extends Expression {
     protected int eval(HashMap<String, Integer> vars) {
         Integer number = vars.get(name);
         if (number == null) {
-            throw new WrongVariableException(); // TODO throw name and cause
+            throw new WrongVariableException(
+                    "You have tried to evaluate expr with incorrect arguments" +
+                    "(one of the variables was not initialized)");
         }
         return number;
     }
