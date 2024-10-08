@@ -12,7 +12,7 @@ class Variable extends Expression {
     protected int eval(HashMap<String, Integer> vars) {
         Integer number = vars.get(name);
         if (number == null) {
-            throw new WrongVariableException();
+            throw new WrongVariableException(); // TODO throw name and cause
         }
         return number;
     }

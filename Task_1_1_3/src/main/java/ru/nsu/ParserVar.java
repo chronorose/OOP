@@ -7,8 +7,4 @@ class ParserVar extends ParserExpr {
         super(ParType.Var);
         var = str;
     }
-
-    public String toString() {
-        return var;
-    }
 }

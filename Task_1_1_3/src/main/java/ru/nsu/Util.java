@@ -7,6 +7,7 @@ class Util {
         }
         return false;
     }
+
     public static boolean isLetter(char ch) {
         if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
             return true;

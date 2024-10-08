@@ -9,8 +9,4 @@ class ParserOp extends ParserExpr {
         this.op = op;
         this.prec = prec;
     }
-
-    public String toString() {
-        return String.valueOf(op);
-    }
 }

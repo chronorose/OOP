@@ -7,8 +7,4 @@ class ParserNumber extends ParserExpr {
         super(ParType.Num);
         this.number = number;
     }
-
-    public String toString() {
-        return String.valueOf(number);
-    }
 }

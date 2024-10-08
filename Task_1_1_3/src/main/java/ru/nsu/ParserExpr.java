@@ -6,6 +6,4 @@ abstract class ParserExpr {
     ParserExpr(ParType tp) {
         this.tp = tp;
     }
-
-    public abstract String toString();
 }

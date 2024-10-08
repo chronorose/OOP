@@ -26,6 +26,19 @@ class DivTest {
         assertTrue(e.equals(e2));
     }
 
+    @Test
+    void derivTest() {
+        Expression e = new Div(new Number(1), new Variable("hoho"));
+        Expression e2 = e.derivative("hoho").simplify();
+        assertEquals("(1 / (hoho * hoho))", e2.toString());
+    }
+
+    @Test
+    void derivTest2() {
+        Expression e = new Div(new Number(1), new Number(100));
+        Expression e2 = e.derivative("hoho").simplify();
+        assertEquals("0", e2.toString());
+    }
 
     @Test
     void testToString2() {
