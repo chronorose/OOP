@@ -7,17 +7,41 @@ class Sub extends Binary {
         super(left, right);
     }
 
-    int eval(HashMap<String, Integer> vars) {
+    protected int eval(HashMap<String, Integer> vars) {
         return left.eval(vars) - right.eval(vars);
     }
 
-    Expression derivative(String var) {
+    public Expression derivative(String var) {
         return new Sub(left.derivative(var), right.derivative(var));
     }
 
+    public Expression simplify() {
+        Expression l = left.simplify();
+        Expression r = right.simplify();
+        if (l.equals(r)) {
+            return new Number(0);
+        }
+        return new Sub(l, r);
+    }
+
+    protected int eval() {
+        return left.eval() - right.eval();
+    }
+
     @Override
-    Expression copy() {
+    public Expression copy() {
         return new Mul(left.copy(), right.copy());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Sub sub = (Sub) obj;
+        return left.equals(sub.left) && right.equals(sub.right);
     }
 
     @Override

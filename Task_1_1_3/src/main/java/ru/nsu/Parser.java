@@ -3,33 +3,35 @@ package ru.nsu;
 import java.util.ArrayList;
 
 class Parser { 
-    private static void addToStack(ArrayList<ParserOp> opstack, ArrayList<ParserExpr> out, ParserOp expr) {
+    private static void addToStack(ArrayList<ParserOp> opstack,
+            ArrayList<ParserExpr> out, ParserOp expr) {
         if (opstack.isEmpty()) {
             opstack.add(expr);
             return;
         }
         do {
             ParserOp exp = opstack.get(opstack.size() - 1);
-            if (exp.prec >= exp.prec) {
+            if (expr.prec >= exp.prec) {
                 break;
             }
             out.add(exp);
-            opstack.removeLast();
+            opstack.remove(opstack.get(opstack.size() - 1));
         } while (!opstack.isEmpty());
         opstack.add(expr);
     }
 
-    private static void addRightParenToStack(ArrayList<ParserOp> opstack, ArrayList<ParserExpr> out) {
+    private static void addRightParenToStack(ArrayList<ParserOp> opstack,
+            ArrayList<ParserExpr> out) {
         ParserOp exp = opstack.get(opstack.size() - 1);
-        while(exp.op != '(') {
-            opstack.removeLast();
+        while (exp.op != '(') {
+            opstack.remove(opstack.get(opstack.size() - 1));
             out.add(exp);
             exp = opstack.get(opstack.size() - 1);
         }
-        opstack.removeLast();
+        opstack.remove(opstack.get(opstack.size() - 1));
     }
 
-    private static Expression ParOpToExpr(ParserOp expr, Expression e1, Expression e2) {
+    private static Expression parOpToExpr(ParserOp expr, Expression e1, Expression e2) {
         Expression ret = null;
         switch (expr.op) {
             case '+':
@@ -44,11 +46,13 @@ class Parser {
             case '/':
                 ret = new Div(e1, e2);
                 break;
+            default:
+                throw new IncorrectInputException();
         } 
         return ret;
     }
 
-    private static ArrayList<Expression> emitExpr(ArrayList<ParserExpr> out) {
+    private static Expression emitExpr(ArrayList<ParserExpr> out) {
         ArrayList<Expression> exprs = new ArrayList<>();
         for (int i = 0; i < out.size(); i++) {
             ParserExpr expr = out.get(i);
@@ -64,16 +68,18 @@ class Parser {
                 case Op:
                     Expression e1 = exprs.get(exprs.size() - 1);
                     Expression e2 = exprs.get(exprs.size() - 2);
-                    exprs.removeLast();
-                    exprs.removeLast();
-                    exprs.add(ParOpToExpr((ParserOp)expr, e2, e1));
+                    exprs.remove(exprs.get(exprs.size() - 1));
+                    exprs.remove(exprs.get(exprs.size() - 1));
+                    exprs.add(parOpToExpr((ParserOp) expr, e2, e1));
                     break;
+                default:
+                    throw new IncorrectInputException();
             }
         }
-        return exprs;
+        return exprs.get(exprs.size() - 1);
     }
 
-    static ArrayList<Expression> parse(String str) {
+    static Expression parse(String str) {
         char[] string = str.toCharArray();
         ArrayList<ParserExpr> out = new ArrayList<>();
         ArrayList<ParserOp> opstack = new ArrayList<>();
@@ -100,11 +106,10 @@ class Parser {
                     addToStack(opstack, out, new ParserOp('/', 3));
                     break;
                 default:
-                    // TODO: исправить это говно
                     if (Util.isDigit(string[i])) {
                         String number = String.valueOf(string[i]);
                         i++;
-                        while(i < string.length && Util.isDigit(string[i])) {
+                        while (i < string.length && Util.isDigit(string[i])) {
                             number += string[i];
                             i++;
                         }
@@ -115,7 +120,7 @@ class Parser {
                     } else if (Util.isLetter(string[i])) {
                         String var = String.valueOf(string[i]);
                         i++;
-                        while(i < string.length && Util.isLetter(string[i])) {
+                        while (i < string.length && Util.isLetter(string[i])) {
                             var += string[i];
                             i++;
                         }
@@ -130,7 +135,7 @@ class Parser {
         while (opstack.size() != 0) {
             ParserOp op = opstack.get(opstack.size() - 1);
             out.add(op);
-            opstack.removeLast();
+            opstack.remove(opstack.get(opstack.size() - 1));
         }
         return emitExpr(out);
     }

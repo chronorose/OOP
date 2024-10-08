@@ -7,11 +7,11 @@ class Mul extends Binary {
         super(left, right);
     }
 
-    int eval(HashMap<String, Integer> vars) {
+    protected int eval(HashMap<String, Integer> vars) {
         return left.eval(vars) * right.eval(vars);
     }
 
-    Expression derivative(String var) {
+    public Expression derivative(String var) {
         Expression l = left.derivative(var);
         Expression r = right.derivative(var);
         Expression uv = new Mul(l, right.copy());
@@ -20,8 +20,48 @@ class Mul extends Binary {
     }
 
     @Override
-    Expression copy() {
+    public Expression copy() {
         return new Mul(left.copy(), right.copy());
+    }
+
+    protected int eval() {
+        return left.eval() * right.eval();
+    }
+
+    private Expression simplifyHelper(Expression e1, Expression e2) {
+        int res = e1.eval();
+        if (res == 0) {
+            return new Number(0);
+        } else if (res == 1) {
+            return e2; 
+        }
+        return new Mul(new Number(res), e2);
+    }
+
+    public Expression simplify() {
+        Expression l = left.simplify();
+        Expression r = right.simplify();
+        boolean lvar = l.hasVar();
+        boolean rvar = r.hasVar();
+        if ((!lvar) && (!rvar)) {
+            return new Number(l.eval() * r.eval());
+        } else if (!lvar) {
+            return simplifyHelper(l, r);
+        } else if (!rvar) {
+            return simplifyHelper(r, l);
+        }
+        return new Mul(l, r);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Mul mul = (Mul) obj;
+        return left.equals(mul.left) && right.equals(mul.right);
     }
 
     @Override

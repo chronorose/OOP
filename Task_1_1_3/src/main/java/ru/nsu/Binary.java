@@ -8,4 +8,9 @@ abstract class Binary extends Expression {
         this.left = left;
         this.right = right;
     }
+
+    protected boolean hasVar() {
+        return left.hasVar() || right.hasVar();
+    }
+
 }
