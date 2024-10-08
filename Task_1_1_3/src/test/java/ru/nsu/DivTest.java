@@ -67,8 +67,8 @@ class DivTest {
 
     @Test
     void divSimplify2() {
-        Expression e = new Div(new Sub(new Variable("haha")
-                    , new Variable("haha")), new Number(100));
+        Expression e = new Div(new Sub(new Variable("haha"), 
+                    new Variable("haha")), new Number(100));
         Expression simple = e.simplify();
         assertEquals(0, simple.eval());
     }
