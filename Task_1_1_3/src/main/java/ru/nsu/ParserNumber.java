@@ -4,7 +4,7 @@ class ParserNumber extends ParserExpr {
     int number;
 
     ParserNumber(int number) {
-        super(PType.Num);
+        super(ParType.Num);
         this.number = number;
     }
 

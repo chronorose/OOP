@@ -4,7 +4,7 @@ class ParserVar extends ParserExpr {
     String var;
 
     ParserVar(String str) {
-        super(PType.Var);
+        super(ParType.Var);
         var = str;
     }
 

@@ -6,7 +6,9 @@ class Main {
         try {
             int i = e.eval("kek= 32");
             System.out.println(i);
-        } catch(Exception ex) {}
+        } catch (Exception ex) {
+            System.out.println("hehe");
+        }
         System.out.println(e.toString());
         String str = "2 * A + 2 * A";
         Expression exprs = Parser.parse(str).simplify();

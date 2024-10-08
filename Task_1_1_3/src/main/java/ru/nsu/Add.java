@@ -21,7 +21,7 @@ class Add extends Binary {
 
     public Expression simplify() {
         if (!hasVar()) {
-            return new Number(eval((HashMap<String, Integer>)null));
+            return new Number(eval());
         }
         return new Add(left.simplify(), right.simplify());
     }

@@ -1,6 +1,6 @@
 package ru.nsu;
 
-public enum PType {
+public enum ParType {
     Var,
     Num,
     Op;

@@ -13,12 +13,12 @@ class Number extends Expression {
         return number; 
     }
 
-    public Expression derivative(String var) {
-        return new Number(0);
-    }
-
     protected int eval() {
         return number; 
+    }
+
+    public Expression derivative(String var) {
+        return new Number(0);
     }
 
     protected boolean hasVar() {

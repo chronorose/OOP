@@ -1,9 +1,9 @@
 package ru.nsu;
 
 abstract class ParserExpr {
-    PType tp; 
+    ParType tp; 
 
-    ParserExpr(PType tp) {
+    ParserExpr(ParType tp) {
         this.tp = tp;
     }
 

@@ -11,21 +11,16 @@ class Mul extends Binary {
         return left.eval(vars) * right.eval(vars);
     }
 
+    protected int eval() {
+        return left.eval() * right.eval();
+    }
+
     public Expression derivative(String var) {
         Expression l = left.derivative(var);
         Expression r = right.derivative(var);
         Expression uv = new Mul(l, right.copy());
         Expression vu = new Mul(left.copy(), r);
         return new Add(uv, vu);
-    }
-
-    @Override
-    public Expression copy() {
-        return new Mul(left.copy(), right.copy());
-    }
-
-    protected int eval() {
-        return left.eval() * right.eval();
     }
 
     private Expression simplifyHelper(Expression e1, Expression e2) {
@@ -51,6 +46,11 @@ class Mul extends Binary {
             return simplifyHelper(r, l);
         }
         return new Mul(l, r);
+    }
+
+    @Override
+    public Expression copy() {
+        return new Mul(left.copy(), right.copy());
     }
 
     @Override

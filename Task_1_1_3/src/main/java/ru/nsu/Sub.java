@@ -11,6 +11,10 @@ class Sub extends Binary {
         return left.eval(vars) - right.eval(vars);
     }
 
+    protected int eval() {
+        return left.eval() - right.eval();
+    }
+
     public Expression derivative(String var) {
         return new Sub(left.derivative(var), right.derivative(var));
     }
@@ -22,10 +26,6 @@ class Sub extends Binary {
             return new Number(0);
         }
         return new Sub(l, r);
-    }
-
-    protected int eval() {
-        return left.eval() - right.eval();
     }
 
     @Override

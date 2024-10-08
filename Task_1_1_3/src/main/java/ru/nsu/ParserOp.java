@@ -5,7 +5,7 @@ class ParserOp extends ParserExpr {
     int prec;
 
     ParserOp(char op, int prec) {
-        super(PType.Op);
+        super(ParType.Op);
         this.op = op;
         this.prec = prec;
     }
