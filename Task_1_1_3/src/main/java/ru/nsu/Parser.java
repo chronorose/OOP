@@ -47,7 +47,7 @@ class Parser {
                 ret = new Div(e1, e2);
                 break;
             default:
-                throw new IncorrectInputException();
+                throw new IncorrectInputException("You have provided incorrect input");
         } 
         return ret;
     }
@@ -73,7 +73,7 @@ class Parser {
                     exprs.add(parOpToExpr((ParserOp) expr, e2, e1));
                     break;
                 default:
-                    throw new IncorrectInputException();
+                    throw new IncorrectInputException("You have provided incorrect input");
             }
         }
         return exprs.get(exprs.size() - 1);

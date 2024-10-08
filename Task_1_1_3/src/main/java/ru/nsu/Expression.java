@@ -28,7 +28,12 @@ abstract class Expression {
         for (int i = 0; i < strs.length; i++) {
             String str = strs[i];
             String[] var = str.split(" = ");
-            hm.put(var[0], Integer.valueOf(var[1]));
+            try {
+                hm.put(var[0], Integer.valueOf(var[1]));
+            } catch (Exception ex) {
+                throw new IncorrectInputException("Wrong value for variable "
+                        + var[0] + " " + var[1]);
+            }
         }
         return eval(hm);
     }

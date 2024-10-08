@@ -13,14 +13,14 @@ class Variable extends Expression {
         Integer number = vars.get(name);
         if (number == null) {
             throw new WrongVariableException(
-                    "You have tried to evaluate expr with incorrect arguments" +
-                    "(one of the variables was not initialized)");
+                    "You have tried to evaluate expr with incorrect arguments"
+                    + "(one of the variables was not initialized).");
         }
         return number;
     }
 
     protected int eval() {
-        throw new WrongVariableException();
+        throw new WrongVariableException("Incorrect optimization took place.");
     }
 
     protected boolean hasVar() {
