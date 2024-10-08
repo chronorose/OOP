@@ -28,4 +28,18 @@ class AddTest {
         Expression e = new Add(new Variable("hihi"), new Number(2));
         assertEquals(5, e.eval("hihi = 3"));
     }
+
+    @Test
+    void addSimplify1() {
+        Expression e = new Add(new Number(3), new Mul(new Number(0), new Variable("haha")));
+        Expression simple = e.simplify();
+        assertEquals(3, simple.eval());
+    }
+
+    @Test
+    void addSimplify2() {
+        Expression e = new Add(new Number(3), new Sub(new Variable("haha"), new Variable("haha")));
+        Expression simple = e.simplify();
+        assertEquals(3, simple.eval());
+    }
 }
