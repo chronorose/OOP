@@ -30,7 +30,7 @@ class Sub extends Binary {
 
     @Override
     public Expression copy() {
-        return new Mul(left.copy(), right.copy());
+        return new Sub(left.copy(), right.copy());
     }
 
     @Override

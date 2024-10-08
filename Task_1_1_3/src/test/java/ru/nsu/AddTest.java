@@ -1,6 +1,7 @@
 package ru.nsu;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,6 +10,20 @@ class AddTest {
     void testToString() {
         Expression e = new Add(new Number(1), new Number(2));
         assertEquals("(1 + 2)", e.toString());
+    }
+
+    @Test
+    void copyTest() {
+        Expression e = new Add(new Number(1), new Number(2));
+        Expression e2 = e.copy();
+        assertTrue(e.equals(e2));
+    }
+
+    @Test
+    void copyTest2() {
+        Expression e = new Add(new Number(1), new Variable("hoho"));
+        Expression e2 = e.copy();
+        assertTrue(e.equals(e2));
     }
 
     @Test
