@@ -20,10 +20,13 @@ class Add extends Binary {
     }
 
     public Expression simplify() {
-        if (!hasVar()) {
-            return new Number(eval());
+        Expression l = left.simplify();
+        Expression r = right.simplify();
+
+        if ((!l.hasVar()) && (!r.hasVar())) {
+            return new Number(l.eval() + r.eval());
         }
-        return new Add(left.simplify(), right.simplify());
+        return new Add(l, r);
     }
 
     @Override

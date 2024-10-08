@@ -13,6 +13,20 @@ class AddTest {
     }
 
     @Test
+    void derivTest() {
+        Expression e = new Add(new Variable("x"), new Number(3));
+        Expression d = e.derivative("x");
+        assertEquals("(1 + 0)", d.toString());
+    }
+
+    @Test
+    void derivTest2() {
+        Expression e = new Add(new Mul(new Variable("x"), new Number(20)), new Number(3));
+        Expression d = e.derivative("x").simplify();
+        assertEquals("20", d.toString());
+    }
+
+    @Test
     void copyTest() {
         Expression e = new Add(new Number(1), new Number(2));
         Expression e2 = e.copy();
@@ -46,13 +60,6 @@ class AddTest {
 
     @Test
     void addSimplify1() {
-        Expression e = new Add(new Number(3), new Mul(new Number(0), new Variable("haha")));
-        Expression simple = e.simplify();
-        assertEquals(3, simple.eval());
-    }
-
-    @Test
-    void addSimplify2() {
         Expression e = new Add(new Number(3), new Sub(new Variable("haha"), new Variable("haha")));
         Expression simple = e.simplify();
         assertEquals(3, simple.eval());

@@ -25,6 +25,9 @@ class Sub extends Binary {
         if (l.equals(r)) {
             return new Number(0);
         }
+        if (!l.hasVar() && !r.hasVar()) {
+            return new Number(l.eval() - r.eval());
+        }
         return new Sub(l, r);
     }
 

@@ -20,6 +20,20 @@ class SubTest {
     }
 
     @Test
+    void derivTest() {
+        Expression e = new Sub(new Variable("x"), new Number(3));
+        Expression d = e.derivative("x").simplify();
+        assertEquals("1", d.toString());
+    }
+
+    @Test
+    void derivTest2() {
+        Expression e = new Sub(new Mul(new Variable("x"), new Number(20)), new Number(3));
+        Expression d = e.derivative("x").simplify();
+        assertEquals("20", d.toString());
+    }
+
+    @Test
     void copyTest2() {
         Expression e = new Sub(new Number(1), new Variable("hoho"));
         Expression e2 = e.copy();

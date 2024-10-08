@@ -45,6 +45,20 @@ class MulTest {
     }
 
     @Test
+    void derivTest() {
+        Expression e = new Mul(new Variable("x"), new Number(3));
+        Expression d = e.derivative("x").simplify();
+        assertEquals("3", d.toString());
+    }
+
+    @Test
+    void derivTest2() {
+        Expression e = new Mul(new Mul(new Variable("x"), new Number(20)), new Number(3));
+        Expression d = e.derivative("x").simplify();
+        assertEquals("60", d.toString());
+    }
+
+    @Test
     void mulSimplify3() {
         Expression e = new Mul(new Number(1), new Variable("haha"));
         Expression simple = e.simplify();
