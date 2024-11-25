@@ -9,9 +9,9 @@ class Semester {
         subjects = new ArrayList<>();
     }
 
-    Semester(Subject[] start_subjects) {
+    Semester(ArrayList<Subject> startSubjects) {
         subjects = new ArrayList<>();
-        for (Subject subject : start_subjects) {
+        for (Subject subject : startSubjects) {
             addSubjectToSemester(subject);
         }
     }
