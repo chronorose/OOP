@@ -3,7 +3,7 @@ package ru.nsu;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
-class GradeBook {
+public class GradeBook {
     ArrayList<Semester> semesters;
 
     GradeBook() {
