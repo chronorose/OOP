@@ -3,7 +3,7 @@ package ru.nsu;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
-public class GradeBook {
+class GradeBook {
     ArrayList<Semester> semesters;
 
     GradeBook() {
@@ -22,17 +22,14 @@ public class GradeBook {
     }
 
     public Boolean checkIfTransferToBudgetAvailable() {
-        Stream<Subject> lastSemesters;
-        if (semesters.size() >= 2) {
-            lastSemesters = subjectsStream(
-                    semesters
-                            .subList(semesters.size() - 2, semesters.size()).stream());
-        } else if (semesters.size() == 1) {
-            lastSemesters = subjectsStream(semesters
-                    .subList(semesters.size() - 1, semesters.size()).stream());
-        } else {
-            return true;
+        if (semesters.size() < 2) {
+            return false;
         }
+        Stream<Subject> lastSemesters = subjectsStream(
+                semesters
+                        .subList(
+                                semesters.size() - 2, semesters.size())
+                        .stream());
         return lastSemesters
                 .filter((x) -> x.type == ControlType.Exam)
                 .map((x) -> x.grade >= 4)
@@ -51,23 +48,31 @@ public class GradeBook {
     }
 
     public Boolean honorsDiploma() {
-        Stream<Subject> subjects = subjectsStream(semesters.stream());
-
-        Stream<Integer> finalGrades = subjects
+        Stream<Integer> finalGrades = subjectsStream(semesters.stream())
                 .filter((x) -> x.finalGrade)
                 .map((x) -> x.grade);
 
-        int gradesCount = (int) finalGrades.count();
-        int gradesSum = finalGrades
-                .reduce(0, (x, y) -> x + y);
+        float gradesCount = finalGrades.count();
 
-        Boolean firstCondition = ((gradesSum / gradesCount) * 100) >= 75;
+        finalGrades = subjectsStream(semesters.stream())
+                .filter((x) -> x.finalGrade)
+                .map((x) -> x.grade);
+
+        float excellentCount = finalGrades
+                .filter((x) -> x == 5)
+                .count();
+
+        Boolean firstCondition = ((excellentCount / gradesCount) * 100) >= 75;
+
+        finalGrades = subjectsStream(semesters.stream())
+                .filter((x) -> x.finalGrade)
+                .map((x) -> x.grade);
 
         Boolean secondCondition = finalGrades
                 .map((x) -> x >= 4)
                 .reduce(true, (x, y) -> x && y);
 
-        Boolean thirdCondition = subjects
+        Boolean thirdCondition = subjectsStream(semesters.stream())
                 .filter((x) -> x.type == ControlType.QualificationWork)
                 .map(x -> x.grade == 5)
                 .reduce(true, (x, y) -> x && y);
