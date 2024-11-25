@@ -3,7 +3,7 @@ package ru.nsu;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
-class GradeBook {
+public class GradeBook {
     ArrayList<Semester> semesters;
 
     GradeBook() {
@@ -25,9 +25,11 @@ class GradeBook {
         Stream<Subject> lastSemesters;
         if (semesters.size() >= 2) {
             lastSemesters = subjectsStream(
-                    semesters.subList(semesters.size() - 2, semesters.size()).stream());
+                    semesters
+                            .subList(semesters.size() - 2, semesters.size()).stream());
         } else if (semesters.size() == 1) {
-            lastSemesters = subjectsStream(semesters.subList(semesters.size() - 1, semesters.size()).stream());
+            lastSemesters = subjectsStream(semesters
+                    .subList(semesters.size() - 1, semesters.size()).stream());
         } else {
             return true;
         }
