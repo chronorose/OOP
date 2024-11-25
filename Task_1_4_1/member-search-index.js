@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ru.nsu","c":"GradeBook","l":"addSemester(Semester)","url":"addSemester(ru.nsu.Semester)"},{"p":"ru.nsu","c":"GradeBook","l":"averageGrade()"},{"p":"ru.nsu","c":"GradeBook","l":"checkIfTransferToBudgetAvailable()"},{"p":"ru.nsu","c":"GradeBook","l":"honorsDiploma()"}]
