@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+group = 'ru.nsu'
+
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+//project.setProperty('javaMainClass') = "ru.nsu.heapsort.HeapSort"
+
+task run(type: Exec) {
+    dependsOn build
+    //main = 'ru.nsu.Main'
+    //classpath = sourceSets.main.runtimeClasspath.getAsPath()
+    standardInput = System.in
+    commandLine "java", "-classpath", sourceSets.main.runtimeClasspath.getAsPath(), javaMainClass
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
