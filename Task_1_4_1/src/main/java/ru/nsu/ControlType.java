@@ -1,8 +1,8 @@
 package ru.nsu;
 
 enum ControlType {
-  Credit,
-  DiffCredit,
-  Exam,
-  QualificationWork
+    Credit,
+    DiffCredit,
+    Exam,
+    QualificationWork
 }
