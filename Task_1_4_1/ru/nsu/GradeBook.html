@@ -132,6 +132,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">GradeBook</span>
 extends java.lang.Object</pre>
+<div class="block">Class for the grade book.
+ Can calculate the average grade, your ability to gain honors diploma
+ and your ability to transfer to budget in case you are paying for education.</div>
 </li>
 </ul>
 </div>
@@ -155,22 +158,30 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addSemester(ru.nsu.Semester)">addSemester</a></span>&#8203;(ru.nsu.Semester&nbsp;semester)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add semesters you passed to the grade book.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#averageGrade()">averageGrade</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method to calculate your average grade in your grade book.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.lang.Boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkIfTransferToBudgetAvailable()">checkIfTransferToBudgetAvailable</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method to check if you can transfer to budget.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.Boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#honorsDiploma()">honorsDiploma</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method to calculate if you're able to get your honors diploma.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -203,6 +214,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>addSemester</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;addSemester&#8203;(ru.nsu.Semester&nbsp;semester)</pre>
+<div class="block">Add semesters you passed to the grade book.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>semester</code> - - semester you've passed.</dd>
+</dl>
 </li>
 </ul>
 <a id="checkIfTransferToBudgetAvailable()">
@@ -212,6 +228,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>checkIfTransferToBudgetAvailable</h4>
 <pre class="methodSignature">public&nbsp;java.lang.Boolean&nbsp;checkIfTransferToBudgetAvailable()</pre>
+<div class="block">Method to check if you can transfer to budget.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>returns boolean value if you can or cannot transfer.</dd>
+</dl>
 </li>
 </ul>
 <a id="averageGrade()">
@@ -221,6 +242,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>averageGrade</h4>
 <pre class="methodSignature">public&nbsp;float&nbsp;averageGrade()</pre>
+<div class="block">Method to calculate your average grade in your grade book.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>average of your grades.</dd>
+</dl>
 </li>
 </ul>
 <a id="honorsDiploma()">
@@ -230,6 +256,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>honorsDiploma</h4>
 <pre class="methodSignature">public&nbsp;java.lang.Boolean&nbsp;honorsDiploma()</pre>
+<div class="block">Method to calculate if you're able to get your honors diploma.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>boolean if you can or cannot get your honors diploma.</dd>
+</dl>
 </li>
 </ul>
 </li>
