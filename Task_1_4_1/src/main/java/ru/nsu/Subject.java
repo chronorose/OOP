@@ -4,12 +4,12 @@ class Subject {
     String name;
     ControlType type;
     Boolean finalGrade;
-    int grade;
+    Grade grade;
 
-    Subject(String n, ControlType ct, Boolean isFinal, int subjectGrade) {
+    Subject(String n, ControlType ct, Boolean isFinal, Grade grade) {
         name = n;
         type = ct;
         finalGrade = isFinal;
-        grade = subjectGrade;
+        this.grade = grade;
     }
 }
