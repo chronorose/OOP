@@ -1,7 +1,7 @@
-package ru.nsu.List;
+package ru.nsu.list;
 
 /**
- * various types of {@link List}
+ * various types of {@link List}.
  */
 public enum ListType {
     ORDERED,

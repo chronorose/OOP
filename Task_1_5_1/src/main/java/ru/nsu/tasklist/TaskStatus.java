@@ -1,5 +1,9 @@
-package ru.nsu.TaskList;
+package ru.nsu.tasklist;
 
+/**
+ * enum that represents status of tasks
+ * of task list element of markdown.
+ */
 public enum TaskStatus {
     DONE("[ ]"),
     NOT_DONE("[x]");

@@ -1,7 +1,10 @@
-package ru.nsu.TaskList;
+package ru.nsu.tasklist;
 
 import java.util.ArrayList;
 
+/**
+ * class of task list element of markdown.
+ */
 public class TaskList {
     private ArrayList<Task> tasks;
 
@@ -30,6 +33,10 @@ public class TaskList {
         return tasks.equals(otherList.tasks);
     }
 
+    /**
+     * class that implements builder pattern for
+     * task list element of markdown.
+     */
     public static class Builder {
         TaskList taskList;
 

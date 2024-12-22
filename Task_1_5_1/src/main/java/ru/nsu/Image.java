@@ -1,5 +1,8 @@
 package ru.nsu;
 
+/**
+ * class of image markdown element.
+ */
 public class Image extends Link {
 
     private Image(String text, String link) {
@@ -15,7 +18,7 @@ public class Image extends Link {
     }
 
     /**
-     * checks if object is equal to instance of {@link Image}
+     * checks if object is equal to instance of {@link Image}.
      */
     @Override
     public boolean equals(Object obj) {

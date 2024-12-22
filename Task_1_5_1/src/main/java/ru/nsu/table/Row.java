@@ -1,7 +1,7 @@
-package ru.nsu.Table;
+package ru.nsu.table;
 
-import ru.nsu.Text;
 import java.util.ArrayList;
+import ru.nsu.Text;
 
 class Row {
     ArrayList<Text> row;

@@ -17,7 +17,7 @@ public class Link extends Text {
     }
 
     /**
-     * checks if object is equal to instance of {@link Link}
+     * checks if object is equal to instance of {@link Link}.
      */
     @Override
     public boolean equals(Object obj) {
@@ -30,13 +30,13 @@ public class Link extends Text {
     }
 
     /**
-     * builder pattern class for {@link Link}
+     * builder pattern class for {@link Link}.
      */
     public static class Builder {
         Link link;
 
         /**
-         * default constructor
+         * default constructor.
          */
         public Builder() {
             link = new Link();
@@ -44,7 +44,7 @@ public class Link extends Text {
 
         /**
          * adds alternative text for the
-         * {@link Link} object that is currently being built
+         * {@link Link} object that is currently being built.
          */
         public Builder withAltText(String altText) {
             link.text = altText;
@@ -52,7 +52,7 @@ public class Link extends Text {
         }
 
         /**
-         * adds link for the {@link Link} object that is currently being built
+         * adds link for the {@link Link} object that is currently being built.
          */
         public Builder withLink(String link) {
             this.link.link = link;
@@ -60,7 +60,7 @@ public class Link extends Text {
         }
 
         /**
-         * builds {@link} object from the current settings.
+         * builds {@link Link} object from the current settings.
          */
         public Link build() {
             return new Link(this.link.text, this.link.link);

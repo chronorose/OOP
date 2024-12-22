@@ -1,12 +1,15 @@
 package ru.nsu;
 
+/**
+ * abstract class that represents markdown element.
+ */
 public abstract class Element {
 
     @Override
-    abstract public String toString();
+    public abstract String toString();
 
     @Override
-    abstract public boolean equals(Object obj);
+    public abstract boolean equals(Object obj);
 
     public String toStringIndented(int ident) {
         return Util.appendPrefix(" ".repeat(ident), this.toString());

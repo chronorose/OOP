@@ -22,7 +22,7 @@ public class BlockQuote extends Text {
     }
 
     /**
-     * checks if object is equal to instance of {@link Quote}
+     * checks if object is equal to instance of {@link Quote}.
      */
     @Override
     public boolean equals(Object obj) {

@@ -1,10 +1,13 @@
-package ru.nsu.Table;
+package ru.nsu.table;
 
 import java.util.ArrayList;
 import java.util.stream.IntStream;
-import ru.nsu.Text;
 import ru.nsu.Element;
+import ru.nsu.Text;
 
+/**
+ * class that implements table markdown element.
+ */
 public class Table extends Element {
     private final String tableStart = "---";
     private final String alignmentSymbol = ":";
@@ -32,7 +35,7 @@ public class Table extends Element {
                                 case RIGHT:
                                     ret = ret + alignmentSymbol;
                                     break;
-                                case CENTER:
+                                default:
                                     ret = alignmentSymbol + ret + alignmentSymbol;
                                     break;
                             }
@@ -60,6 +63,10 @@ public class Table extends Element {
         this.alignment = new ArrayList<>(alignments);
     }
 
+    /**
+     * class that implements builder pattern for table
+     * element of markdown.
+     */
     public static class Builder {
         Table table;
 

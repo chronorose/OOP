@@ -1,11 +1,10 @@
-package ru.nsu.List;
+package ru.nsu.list;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import ru.nsu.Util;
-
 import ru.nsu.Element;
+import ru.nsu.Util;
 
 /**
  * list in markdown. extends {@link Element}.
@@ -19,7 +18,7 @@ public class List extends Element {
         lines = new ArrayList<>();
         identLevels = new ArrayList<>();
         listType = ListType.UNORDERED;
-    };
+    }
 
     private List(ArrayList<Element> lines, ArrayList<Integer> idents, ListType lt) {
         this.lines = new ArrayList<>(lines);
@@ -84,7 +83,7 @@ public class List extends Element {
         private List list;
 
         /**
-         * constructs builder of {@link List}
+         * constructs builder of {@link List}.
          */
         public Builder() {
             list = new List();
@@ -98,6 +97,9 @@ public class List extends Element {
             return addLineIdented(element, 0);
         }
 
+        /**
+         * adds line with indent.
+         */
         public Builder addLineIdented(Element element, int ident) {
             list.lines.add(element);
             list.identLevels.add(ident);

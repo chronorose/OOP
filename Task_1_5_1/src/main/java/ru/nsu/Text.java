@@ -87,7 +87,7 @@ public class Text extends Element {
      * extends {@link Text}.
      */
     public static class Italic extends Text {
-        final private String italicSymbols = "*";
+        private final String italicSymbols = "*";
 
         /**
          * constructs new {@link Text.Italic} instance.
@@ -122,7 +122,7 @@ public class Text extends Element {
      * extends {@link Text}.
      */
     public static class Code extends Text {
-        final private String codeSymbols = "`";
+        private final String codeSymbols = "`";
 
         /**
          * constructs new {@link Text.Code} instance.
@@ -157,7 +157,7 @@ public class Text extends Element {
      * extends {@link Text}.
      */
     public static class Strikethrough extends Text {
-        final private String strikethroughSymbols = "~~";
+        private final String strikethroughSymbols = "~~";
 
         /**
          * constructs new {@link Text.Strikethrough} instance.
@@ -192,7 +192,7 @@ public class Text extends Element {
      * extends {@link Text}.
      */
     public static class Highlight extends Text {
-        final private String highlightSymbols = "==";
+        private final String highlightSymbols = "==";
 
         /**
          * constructs new {@link Highlight} instance.

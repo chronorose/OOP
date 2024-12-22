@@ -1,7 +1,10 @@
 package ru.nsu;
 
+/**
+ * class of code block element of markdown.
+ */
 public class CodeBlock extends Text {
-    private final static String cbSymbols = "```";
+    private static final String cbSymbols = "```";
 
     public CodeBlock(String code) {
         super(code);

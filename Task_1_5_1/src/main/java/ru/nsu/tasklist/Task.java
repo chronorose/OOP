@@ -1,4 +1,4 @@
-package ru.nsu.TaskList;
+package ru.nsu.tasklist;
 
 import ru.nsu.Text;
 
