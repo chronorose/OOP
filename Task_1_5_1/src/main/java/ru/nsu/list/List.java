@@ -27,8 +27,7 @@ public class List extends Element {
     }
 
     /**
-     * returns {@link String} of this class
-     * in markdown syntax.
+     * @return String of this class in markdown syntax.
      */
     public String toString() {
         String ret;
@@ -65,7 +64,11 @@ public class List extends Element {
     }
 
     /**
-     * tells if some {@Object} is equal to instance of {@link List}.
+     * tells if some {@link Object} is equal to instance of {@link List}.
+     *
+     * @param Object obj object with which to check equality.
+     *
+     * @return boolean that tells if they're equal or not.
      */
     public boolean equals(Object obj) {
         if (obj == null || obj.getClass() != this.getClass()) {
@@ -92,6 +95,10 @@ public class List extends Element {
         /**
          * adds line from {@link Element}
          * to {@link List} that this {@link Builder} builds.
+         * 
+         * @param Element element to add.
+         *
+         * @return Builder to continue building.
          */
         public Builder addLine(Element element) {
             return addLineIdented(element, 0);
@@ -99,6 +106,11 @@ public class List extends Element {
 
         /**
          * adds line with indent.
+         * 
+         * @param Element element to add with indent.
+         * @param int     ident which ident to add with.
+         * 
+         * @return Builder to continue building.
          */
         public Builder addLineIdented(Element element, int ident) {
             list.lines.add(element);
@@ -109,6 +121,10 @@ public class List extends Element {
         /**
          * changes {@link ListType} of {@link List}
          * that this {@link Builder} builds.
+         *
+         * @param ListType lt which type of the list to build.
+         *
+         * @return Builder to continue building.
          */
         public Builder withListType(ListType lt) {
             list.listType = lt;
@@ -118,6 +134,8 @@ public class List extends Element {
         /**
          * returns {@link List} that this
          * {@link Builder} built.
+         *
+         * @return List that has been built.
          */
         public List build() {
             return new List(this.list.lines, this.list.identLevels, this.list.listType);

@@ -20,25 +20,15 @@ public class Text extends Element {
     }
 
     /**
-     * returns {@link String} that is correct markdown syntax for {@link Text}.
+     * @return String that is correct markdown syntax for {@link Text}.
      */
     @Override
     public String toString() {
         return text;
     }
 
-    // @Override
-    // public String toStringIndented(int ident) {
-    // StringBuilder sb = new StringBuilder();
-    // new BufferedReader(new StringReader(text))
-    // .lines()
-    // .forEach(line -> sb.append(" ".repeat(ident)).append(line).append('\n'));
-    // sb.deleteCharAt(sb.length() - 1);
-    // return sb.toString();
-    // }
-
     /**
-     * returns if instance of {@link Text} is equal to another object.
+     * @return boolean if instance of {@link Text} is equal to another object.
      */
     @Override
     public boolean equals(Object obj) {
@@ -63,7 +53,7 @@ public class Text extends Element {
         }
 
         /**
-         * returns {@link String} that is correct markdown syntax for {@link Text.Bold}.
+         * @return {@link String} that is correct markdown syntax for {@link Text.Bold}.
          */
         @Override
         public String toString() {
@@ -71,7 +61,9 @@ public class Text extends Element {
         }
 
         /**
-         * returns if instance of {@link Text.Bold} is equal to another object.
+         * @param Object obj with which to test equality.
+         *
+         * @return boolean if instance of {@link Text.Bold} is equal to another object.
          */
         @Override
         public boolean equals(Object obj) {
@@ -97,8 +89,8 @@ public class Text extends Element {
         }
 
         /**
-         * returns {@link String} that is correct markdown syntax for
-         * {@link Text.Italic}.
+         * @return {@link String} that is correct markdown syntax for
+         *         {@link Text.Italic}.
          */
         @Override
         public String toString() {
@@ -106,7 +98,9 @@ public class Text extends Element {
         }
 
         /**
-         * returns if instance of {@link Text.Italic} is equal to another object.
+         * @param Object obj with which to test equality.
+         *
+         * @return if instance of {@link Text.Italic} is equal to another object.
          */
         @Override
         public boolean equals(Object obj) {
@@ -132,8 +126,8 @@ public class Text extends Element {
         }
 
         /**
-         * returns {@link String} that is correct markdown syntax for
-         * {@link Text.Code}.
+         * @return {@link String} that is correct markdown syntax for
+         *         {@link Text.Code}.
          */
         @Override
         public String toString() {
@@ -141,7 +135,9 @@ public class Text extends Element {
         }
 
         /**
-         * returns if instance of {@link Text.Code} is equal to another object.
+         * @param Object obj with which to test equality.
+         *
+         * @return boolean if instance of {@link Text.Code} is equal to another object.
          */
         @Override
         public boolean equals(Object obj) {
@@ -167,8 +163,8 @@ public class Text extends Element {
         }
 
         /**
-         * returns {@link String} that is correct markdown syntax for
-         * {@link Text.Strikethrough}.
+         * @return {@link String} that is correct markdown syntax for
+         *         {@link Text.Strikethrough}.
          */
         @Override
         public String toString() {
@@ -176,7 +172,10 @@ public class Text extends Element {
         }
 
         /**
-         * returns if instance of {@link Text.Strikethrough} is equal to another object.
+         * @param Object obj with which to test equality.
+         *
+         * @return boolean if instance of {@link Text.Strikethrough} is equal to another
+         *         object.
          */
         @Override
         public boolean equals(Object obj) {
@@ -202,8 +201,8 @@ public class Text extends Element {
         }
 
         /**
-         * returns {@link String} that is correct markdown syntax for
-         * {@link Text.Highlight}.
+         * @return {@link String} that is correct markdown syntax for
+         *         {@link Text.Highlight}.
          */
         @Override
         public String toString() {
@@ -211,7 +210,10 @@ public class Text extends Element {
         }
 
         /**
-         * returns if instance of {@link Text.Highlight} is equal to another object.
+         * @param Object obj with which to test equality.
+         *
+         * @return boolean if instance of {@link Text.Highlight} is equal to another
+         *         object.
          */
         @Override
         public boolean equals(Object obj) {
