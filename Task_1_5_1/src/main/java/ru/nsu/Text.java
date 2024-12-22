@@ -20,6 +20,8 @@ public class Text extends Element {
     }
 
     /**
+     * returns string for this object.
+     *
      * @return String that is correct markdown syntax for {@link Text}.
      */
     @Override
@@ -28,6 +30,8 @@ public class Text extends Element {
     }
 
     /**
+     * checks if objects are equal.
+     *
      * @return boolean if instance of {@link Text} is equal to another object.
      */
     @Override
@@ -53,6 +57,8 @@ public class Text extends Element {
         }
 
         /**
+         * returns string for this object.
+         *
          * @return {@link String} that is correct markdown syntax for {@link Text.Bold}.
          */
         @Override
@@ -61,7 +67,9 @@ public class Text extends Element {
         }
 
         /**
-         * @param Object obj with which to test equality.
+         * checks if objects are equal.
+         *
+         * @param obj with which to test equality.
          *
          * @return boolean if instance of {@link Text.Bold} is equal to another object.
          */
@@ -89,6 +97,8 @@ public class Text extends Element {
         }
 
         /**
+         * returns string for this object.
+         *
          * @return {@link String} that is correct markdown syntax for
          *         {@link Text.Italic}.
          */
@@ -98,7 +108,9 @@ public class Text extends Element {
         }
 
         /**
-         * @param Object obj with which to test equality.
+         * checks if objects are equal.
+         *
+         * @param obj with which to test equality.
          *
          * @return if instance of {@link Text.Italic} is equal to another object.
          */
@@ -126,6 +138,8 @@ public class Text extends Element {
         }
 
         /**
+         * returns string for this object.
+         *
          * @return {@link String} that is correct markdown syntax for
          *         {@link Text.Code}.
          */
@@ -135,7 +149,9 @@ public class Text extends Element {
         }
 
         /**
-         * @param Object obj with which to test equality.
+         * checks if objects are equal.
+         *
+         * @param obj with which to test equality.
          *
          * @return boolean if instance of {@link Text.Code} is equal to another object.
          */
@@ -163,6 +179,8 @@ public class Text extends Element {
         }
 
         /**
+         * returns string for this object.
+         *
          * @return {@link String} that is correct markdown syntax for
          *         {@link Text.Strikethrough}.
          */
@@ -172,7 +190,9 @@ public class Text extends Element {
         }
 
         /**
-         * @param Object obj with which to test equality.
+         * checks if texts are equal.
+         *
+         * @param obj with which to test equality.
          *
          * @return boolean if instance of {@link Text.Strikethrough} is equal to another
          *         object.
@@ -201,6 +221,8 @@ public class Text extends Element {
         }
 
         /**
+         * returns String that is correct markdown for highlighted text.
+         * 
          * @return {@link String} that is correct markdown syntax for
          *         {@link Text.Highlight}.
          */
@@ -210,7 +232,9 @@ public class Text extends Element {
         }
 
         /**
-         * @param Object obj with which to test equality.
+         * checks if texts are equal.
+         *
+         * @param obj with which to test equality.
          *
          * @return boolean if instance of {@link Text.Highlight} is equal to another
          *         object.

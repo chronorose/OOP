@@ -6,5 +6,6 @@ package ru.nsu.table;
 public enum Alignment {
     LEFT,
     RIGHT,
-    CENTER
+    CENTER,
+    DEFAULT,
 }

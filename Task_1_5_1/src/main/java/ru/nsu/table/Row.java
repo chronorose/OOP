@@ -15,6 +15,10 @@ class Row {
 
     @Override
     public String toString() {
-        return "| " + row.stream().map(el -> el.toString() + " | ") + System.lineSeparator();
+        return "| "
+                + row
+                        .stream()
+                        .map(el -> el.toString() + " | ")
+                        .reduce("", (acc, line) -> acc + line);
     }
 }

@@ -16,6 +16,7 @@ public class Table extends Element {
 
     private Table() {
         rows = new ArrayList<>();
+        alignment = new ArrayList<>();
     }
 
     @Override
@@ -24,7 +25,7 @@ public class Table extends Element {
             return "";
         }
         return rows.get(0).toString()
-                + alignment
+                + System.lineSeparator() + "| " + alignment
                         .stream()
                         .map(align -> {
                             String ret = tableStart;
@@ -35,18 +36,21 @@ public class Table extends Element {
                                 case RIGHT:
                                     ret = ret + alignmentSymbol;
                                     break;
-                                default:
+                                case CENTER:
                                     ret = alignmentSymbol + ret + alignmentSymbol;
+                                    break;
+                                default:
                                     break;
                             }
                             return ret + " | ";
                         })
-                        .reduce("", (acc, line) -> acc + line + System.lineSeparator())
+                        .reduce("", (acc, line) -> acc + line)
                         .toString()
+                + "\n"
                 + IntStream
                         .range(1, rows.size())
                         .mapToObj(i -> rows.get(i).toString())
-                        .reduce("", (acc, line) -> acc + line + System.lineSeparator());
+                        .reduce("", (acc, line) -> acc + line.toString() + System.lineSeparator());
     }
 
     @Override
@@ -74,14 +78,16 @@ public class Table extends Element {
             table = new Table();
         }
 
-        public void addRow(Text... texts) {
+        public Builder addRow(Text... texts) {
             table.rows.add(new Row(texts));
+            return this;
         }
 
-        public void withAlignment(Alignment... alignments) {
+        public Builder withAlignment(Alignment... alignments) {
             for (Alignment al : alignments) {
                 table.alignment.add(al);
             }
+            return this;
         }
 
         public Table build() {
