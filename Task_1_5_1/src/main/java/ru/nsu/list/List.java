@@ -75,7 +75,9 @@ public class List extends Element {
             return false;
         }
         List otherList = (List) obj;
-        return lines.equals(otherList.lines) && (listType == otherList.listType);
+        return lines.equals(otherList.lines)
+                && (listType == otherList.listType)
+                && identLevels.equals(otherList.identLevels);
     }
 
     /**
