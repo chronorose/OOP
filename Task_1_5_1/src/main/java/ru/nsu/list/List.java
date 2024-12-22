@@ -66,7 +66,7 @@ public class List extends Element {
     /**
      * tells if some {@link Object} is equal to instance of {@link List}.
      *
-     * @param Object obj object with which to check equality.
+     * @param obj with which to check equality.
      *
      * @return boolean that tells if they're equal or not.
      */
@@ -96,7 +96,7 @@ public class List extends Element {
          * adds line from {@link Element}
          * to {@link List} that this {@link Builder} builds.
          * 
-         * @param Element element to add.
+         * @param element to add.
          *
          * @return Builder to continue building.
          */
@@ -107,8 +107,8 @@ public class List extends Element {
         /**
          * adds line with indent.
          * 
-         * @param Element element to add with indent.
-         * @param int     ident which ident to add with.
+         * @param element to add with indent.
+         * @param ident   which ident to add with.
          * 
          * @return Builder to continue building.
          */
@@ -122,7 +122,7 @@ public class List extends Element {
          * changes {@link ListType} of {@link List}
          * that this {@link Builder} builds.
          *
-         * @param ListType lt which type of the list to build.
+         * @param lt which type of the list to build.
          *
          * @return Builder to continue building.
          */
