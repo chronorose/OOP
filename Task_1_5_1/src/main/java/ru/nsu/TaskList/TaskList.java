@@ -14,11 +14,20 @@ public class TaskList {
     return tasks
         .stream()
         .map(x -> x.toString())
-        .reduce((acc, line) -> acc + line).get();
+        .reduce("", (acc, line) -> acc + "- " + line + "\n");
   }
 
-  private TaskList(Builder builder) {
-    tasks = new ArrayList<>(builder.taskList.tasks);
+  private TaskList(ArrayList<Task> tasks) {
+    this.tasks = new ArrayList<>(tasks);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null || obj.getClass() != this.getClass()) {
+      return false;
+    }
+    TaskList otherList = (TaskList) obj;
+    return tasks.equals(otherList.tasks);
   }
 
   public static class Builder {
@@ -35,11 +44,6 @@ public class TaskList {
 
     public Builder addDoneTask(String task) {
       taskList.tasks.add(new Task(task, TaskStatus.DONE));
-      return this;
-    }
-
-    public Builder doneTask(int index) {
-      taskList.tasks.get(index).status = TaskStatus.DONE;
       return this;
     }
 

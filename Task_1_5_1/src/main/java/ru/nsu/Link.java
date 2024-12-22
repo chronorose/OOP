@@ -1,20 +1,19 @@
 package ru.nsu;
 
-public class Link {
-  private String altText;
-  private String link;
+public class Link extends Text {
+  protected String link;
 
-  private Link() {
+  protected Link() {
   }
 
-  private Link(Builder builder) {
-    altText = builder.link.altText;
-    link = builder.link.link;
+  protected Link(String text, String link) {
+    super(text);
+    this.link = link;
   }
 
   @Override
   public String toString() {
-    return "[" + altText + "]" + "(" + link + ")";
+    return "[" + text + "]" + "(" + link + ")";
   }
 
   /**
@@ -27,28 +26,44 @@ public class Link {
     }
 
     Link otherLink = (Link) obj;
-    return link.equals(otherLink.link) && altText.equals(otherLink.altText);
+    return link.equals(otherLink.link) && text.equals(otherLink.text);
   }
 
+  /**
+   * builder pattern class for {@link Link}
+   */
   public static class Builder {
     Link link;
 
+    /**
+     * default constructor
+     */
     public Builder() {
       link = new Link();
     }
 
+    /**
+     * adds alternative text for the
+     * {@link Link} object that is currently being built
+     */
     public Builder withAltText(String altText) {
-      link.altText = altText;
+      link.text = altText;
       return this;
     }
 
+    /**
+     * adds link for the {@link Link} object that is currently being built
+     */
     public Builder withLink(String link) {
       this.link.link = link;
       return this;
     }
 
+    /**
+     * builds {@link} object from the current settings.
+     */
     public Link build() {
-      return new Link(this);
+      return new Link(this.link.text, this.link.link);
     }
   }
 }

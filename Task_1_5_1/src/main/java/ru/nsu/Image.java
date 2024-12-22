@@ -1,20 +1,17 @@
 package ru.nsu;
 
-public class Image {
-  private String altText;
-  private String link;
+public class Image extends Link {
+
+  private Image(String text, String link) {
+    super(text, link);
+  }
 
   private Image() {
   }
 
-  private Image(Builder builder) {
-    altText = builder.image.altText;
-    link = builder.image.link;
-  }
-
   @Override
   public String toString() {
-    return "![" + altText + "]" + "(" + link + ")";
+    return "![" + text + "]" + "(" + link + ")";
   }
 
   /**
@@ -27,7 +24,7 @@ public class Image {
     }
 
     Image otherImage = (Image) obj;
-    return link.equals(otherImage.link) && altText.equals(otherImage.altText);
+    return link.equals(otherImage.link) && text.equals(otherImage.text);
   }
 
   public static class Builder {
@@ -38,7 +35,7 @@ public class Image {
     }
 
     public Builder withAltText(String altText) {
-      image.altText = altText;
+      image.text = altText;
       return this;
     }
 
@@ -48,7 +45,7 @@ public class Image {
     }
 
     public Image build() {
-      return new Image(this);
+      return new Image(this.image.text, this.image.link);
     }
   }
 }

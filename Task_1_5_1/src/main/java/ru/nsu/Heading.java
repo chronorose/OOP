@@ -1,37 +1,35 @@
 package ru.nsu;
 
-import java.util.stream.IntStream;
-
 /**
  * implements headings with markdown syntax.
  */
-public class Heading extends Element {
-  private String heading;
+public class Heading extends Text {
   private int level;
 
   /**
    * constructs new {@link Heading} object.
    */
   public Heading(String heading, int level) {
-    this.heading = heading;
+    super(heading);
     this.level = level;
   }
 
   /**
+   * afaik there is no way to treat
+   * multiline headings accordingly, as
+   * most markdown renderers do not offer
+   * such functionality.
    * returns {@link String} with markdown syntax for heading.
    */
   @Override
   public String toString() {
-    return IntStream
-        .range(0, level)
-        .mapToObj(i -> "#")
-        .reduce("", (acc, i) -> acc + i)
+    return "#".repeat(level)
         + " "
-        + heading;
+        + text;
   }
 
   /**
-   * checks if object is equal to instance of {@link Heading}
+   * checks if object is equal to instance of {@link Heading}.
    */
   @Override
   public boolean equals(Object obj) {
@@ -40,6 +38,6 @@ public class Heading extends Element {
     }
 
     Heading otherHeading = (Heading) obj;
-    return heading.equals(otherHeading.heading) && level == otherHeading.level;
+    return text.equals(otherHeading.text) && level == otherHeading.level;
   }
 }

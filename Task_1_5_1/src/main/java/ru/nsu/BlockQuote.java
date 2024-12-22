@@ -3,15 +3,14 @@ package ru.nsu;
 /**
  * implements quotes with markdown syntax.
  */
-public class Quote extends Element {
-  private String quote;
+public class BlockQuote extends Text {
   private final char quoteSymbol = '>';
 
   /**
    * constructs new {@link Heading} object.
    */
-  public Quote(String quote) {
-    this.quote = quote;
+  public BlockQuote(String quote) {
+    super(quote);
   }
 
   /**
@@ -19,7 +18,7 @@ public class Quote extends Element {
    */
   @Override
   public String toString() {
-    return quoteSymbol + " " + quote;
+    return Util.appendPostfix(" ".repeat(2), quoteSymbol + " " + text);
   }
 
   /**
@@ -31,7 +30,7 @@ public class Quote extends Element {
       return false;
     }
 
-    Quote otherQuote = (Quote) obj;
-    return quote.equals(otherQuote.quote);
+    BlockQuote otherQuote = (BlockQuote) obj;
+    return text.equals(otherQuote.text);
   }
 }

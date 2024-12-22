@@ -1,16 +1,22 @@
 package ru.nsu;
 
+import java.io.BufferedReader;
+import java.io.StringReader;
+
 /**
  * represents text in markdown. extends {@link Element}.
  */
 public class Text extends Element {
-  String text;
+  protected String text;
 
   /**
    * constructs new {@link Text} instance.
    */
   public Text(String text) {
     this.text = text;
+  }
+
+  protected Text() {
   }
 
   /**
@@ -20,6 +26,16 @@ public class Text extends Element {
   public String toString() {
     return text;
   }
+
+  // @Override
+  // public String toStringIndented(int ident) {
+  // StringBuilder sb = new StringBuilder();
+  // new BufferedReader(new StringReader(text))
+  // .lines()
+  // .forEach(line -> sb.append(" ".repeat(ident)).append(line).append('\n'));
+  // sb.deleteCharAt(sb.length() - 1);
+  // return sb.toString();
+  // }
 
   /**
    * returns if instance of {@link Text} is equal to another object.
