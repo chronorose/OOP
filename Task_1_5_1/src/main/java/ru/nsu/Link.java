@@ -1,69 +1,69 @@
 package ru.nsu;
 
 public class Link extends Text {
-  protected String link;
+    protected String link;
 
-  protected Link() {
-  }
-
-  protected Link(String text, String link) {
-    super(text);
-    this.link = link;
-  }
-
-  @Override
-  public String toString() {
-    return "[" + text + "]" + "(" + link + ")";
-  }
-
-  /**
-   * checks if object is equal to instance of {@link Link}
-   */
-  @Override
-  public boolean equals(Object obj) {
-    if (obj == null || obj.getClass() != this.getClass()) {
-      return false;
+    protected Link() {
     }
 
-    Link otherLink = (Link) obj;
-    return link.equals(otherLink.link) && text.equals(otherLink.text);
-  }
+    protected Link(String text, String link) {
+        super(text);
+        this.link = link;
+    }
 
-  /**
-   * builder pattern class for {@link Link}
-   */
-  public static class Builder {
-    Link link;
-
-    /**
-     * default constructor
-     */
-    public Builder() {
-      link = new Link();
+    @Override
+    public String toString() {
+        return "[" + text + "]" + "(" + link + ")";
     }
 
     /**
-     * adds alternative text for the
-     * {@link Link} object that is currently being built
+     * checks if object is equal to instance of {@link Link}
      */
-    public Builder withAltText(String altText) {
-      link.text = altText;
-      return this;
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        Link otherLink = (Link) obj;
+        return link.equals(otherLink.link) && text.equals(otherLink.text);
     }
 
     /**
-     * adds link for the {@link Link} object that is currently being built
+     * builder pattern class for {@link Link}
      */
-    public Builder withLink(String link) {
-      this.link.link = link;
-      return this;
-    }
+    public static class Builder {
+        Link link;
 
-    /**
-     * builds {@link} object from the current settings.
-     */
-    public Link build() {
-      return new Link(this.link.text, this.link.link);
+        /**
+         * default constructor
+         */
+        public Builder() {
+            link = new Link();
+        }
+
+        /**
+         * adds alternative text for the
+         * {@link Link} object that is currently being built
+         */
+        public Builder withAltText(String altText) {
+            link.text = altText;
+            return this;
+        }
+
+        /**
+         * adds link for the {@link Link} object that is currently being built
+         */
+        public Builder withLink(String link) {
+            this.link.link = link;
+            return this;
+        }
+
+        /**
+         * builds {@link} object from the current settings.
+         */
+        public Link build() {
+            return new Link(this.link.text, this.link.link);
+        }
     }
-  }
 }

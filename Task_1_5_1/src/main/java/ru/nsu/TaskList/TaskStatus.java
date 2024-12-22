@@ -1,12 +1,12 @@
 package ru.nsu.TaskList;
 
 public enum TaskStatus {
-  DONE("[ ]"),
-  NOT_DONE("[x]");
+    DONE("[ ]"),
+    NOT_DONE("[x]");
 
-  final String statusSymbol;
+    final String statusSymbol;
 
-  TaskStatus(String symbol) {
-    statusSymbol = symbol;
-  }
+    TaskStatus(String symbol) {
+        statusSymbol = symbol;
+    }
 }
