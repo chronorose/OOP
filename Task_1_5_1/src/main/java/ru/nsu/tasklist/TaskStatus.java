@@ -5,8 +5,8 @@ package ru.nsu.tasklist;
  * of task list element of markdown.
  */
 public enum TaskStatus {
-    DONE("[ ]"),
-    NOT_DONE("[x]");
+    DONE("[x]"),
+    NOT_DONE("[ ]");
 
     final String statusSymbol;
 
