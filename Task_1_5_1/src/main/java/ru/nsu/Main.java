@@ -1,8 +1,8 @@
 package ru.nsu;
 
-import ru.nsu.List.List;
-import ru.nsu.List.ListType;
-import ru.nsu.TaskList.TaskList;
+import ru.nsu.list.List;
+import ru.nsu.list.ListType;
+import ru.nsu.tasklist.TaskList;
 
 class Main {
     public static void main(String[] args) {
@@ -36,6 +36,8 @@ class Main {
 
         BlockQuote bq = new BlockQuote("hello!\nvery nice to see ya!\nvery interesting of you to come here!\n");
         System.out.println(bq);
+        BlockQuote bq2 = new BlockQuote("hi!");
+        System.out.println(bq2);
 
         CodeBlock cb = new CodeBlock("print(\"hihi\");\nstd::cout << std::endl;");
         System.out.println(cb.toStringIndented(3));

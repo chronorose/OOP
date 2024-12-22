@@ -55,7 +55,7 @@ public class TaskList {
         }
 
         public TaskList build() {
-            return new TaskList(this);
+            return new TaskList(this.taskList.tasks);
         }
     }
 }

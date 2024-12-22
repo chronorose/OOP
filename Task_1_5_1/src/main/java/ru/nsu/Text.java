@@ -53,7 +53,7 @@ public class Text extends Element {
      * extends {@link Text}.
      */
     public static class Bold extends Text {
-        final private String boldSymbols = "**";
+        private final String boldSymbols = "**";
 
         /**
          * constructs new {@link Text.Bold} instance.
